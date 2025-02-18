@@ -30,7 +30,7 @@ class FollowView(LoginRequiredMixin, View):
     http_method_names = ["post"]
 
     def post(self, request, *args, **kwargs):
-        data = request.POST,dict()
+        data = request.POST.dict()
 
         if "action" not in data or "username" not in data:
             return HttpResponseBadRequest("Missing Data")
